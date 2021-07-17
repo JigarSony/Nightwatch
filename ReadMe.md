@@ -19,11 +19,13 @@ Official Website [Nightwatch](https://nightwatchjs.org/)
  - To install Nightwatch dependencies `npm install nightwatch chromedriver --save-dep`
  - open VS Code `code .`
  - To check Nightwatch version `npx nightwatch --version`
+
   ```
   Nightwatch:
     version: 1.7.7
     changelog: https://github.com/nightwatchjs/nightwatch/releases/tag/v1.7.7
     ```
+
  - To install Chrome driver `npm install chromedriver --save-dev`
  - To install Firefox/Gecko driver `npm install geckodriver --save-dev`
 
@@ -33,11 +35,13 @@ Official Website [Nightwatch](https://nightwatchjs.org/)
 
 - Run Command `npx nightwatch`
 - Error 
+
 ```
 No config file found in the current working directory, creating nightwatch.conf.js in the current folder...
 Error: No test source specified, please check configuration.
 at processTicksAndRejections (internal/process/task_queues.js:93:5)</p>
 ```
+
 > - So without `nightwatch.conf.js` file => run `npx nightwatch` => Nightwatch create `nightwatch.conf.js` file
 
 - Create `tests` folder `mkdir tests`
@@ -47,6 +51,7 @@ at processTicksAndRejections (internal/process/task_queues.js:93:5)</p>
 
 - Run Command `npx nightwatch`
 - Error 
+
 ```
 npx nightwatch
    Error: No tests defined! using source folder: ./test</p>
@@ -71,7 +76,9 @@ browser.url("http://tutorials.actionqa.com/yt/nw/simple.html");
 - Run Command `npx nightwarch -e firefox` specific to `firefox browser`
 `npx nightwatch -e chrome`
 
+
  ### Execution-3
+
 
 <p>[Simple] Test Suite 
 
@@ -331,7 +338,6 @@ module.exports = {
 
 
 ```
-
 module.exports = {
     "set and clear": function (browser){
         browser.url("http://tutorials.actionqa.com/yt/nw/basic/text-input.html");
@@ -343,7 +349,6 @@ module.exports = {
         browser.end();
     }
 }
-
 ```
 
 > - `browser.setValue("#text-input","Hello");`
