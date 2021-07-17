@@ -1,1 +1,2 @@
-1626510740124	geckodriver	INFO	Listening on 127.0.0.1:4444
+1626515530833	geckodriver	INFO	Listening on 127.0.0.1:4444
+1626515531226	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/9g/vn75ybjx2lg4246hjbhqk6p00000gn/T/rust_mozprofilecvP5OQ"
