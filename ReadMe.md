@@ -270,7 +270,9 @@ module.exports = {
 
 ![alt text](https://github.com/JigarSony/Nightwatch/blob/master/referenceScreenShots/2.png?raw=true)
 
+
 ### 5-navigate.js
+
 
 ```
 module.exports = {
@@ -284,9 +286,12 @@ module.exports = {
 ```
 > - `NoIdea`
 
+
 ### 6-pause.js
 
+
 ```
+
 module.exports = {
     "navigate": function (browser){
         browser.url("https://www.google.com");
@@ -299,11 +304,14 @@ module.exports = {
         //use : debug the page at some execution time
     },
 };
+
 ```
 > - `browser.pause(2000);` pause for 2 sec
 > - `browser.pause();` pause...
 
+
 ### 7-click.js
+
 
 ```
 module.exports = {
@@ -318,7 +326,9 @@ module.exports = {
 > - `browser.click("#surprise-button");`
 > - `browser.end();`
 
+
 ### 8-textInput.js
+
 
 ```
 module.exports = {
