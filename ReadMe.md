@@ -336,7 +336,6 @@ module.exports = {
 
 ## 8-textInput.js
 
-
 ```
 module.exports = {
     "set and clear": function (browser){
@@ -347,9 +346,95 @@ module.exports = {
         browser.clearValue("#text-input");
         browser.pause(2000);
         browser.end();
+    },
+
+    "using key": function (browser) {
+        browser.url("http://tutorials.actionqa.com/yt/nw/basic/text-input.html");
+        browser.click("#text-input");
+        browser.pause(2000);
+        browser.keys("We're using keys");
+        browser.pause(2000);
+        browser.clearValue("#text-input");
+        browser.pause(2000);
+        browser.end();
+    },
+
+    "using array of key": function (browser) {
+        browser.url("http://tutorials.actionqa.com/yt/nw/basic/text-input.html");
+        browser.click("#text-input");
+        browser.pause(2000);
+        browser.keys(["W","E","A","R","E","1"]);
+        browser.pause(2000);
+        browser.clearValue("#text-input");
+        browser.pause(2000);
+        browser.end();
+    },
+
+    "Keyboard Keys": function (browser) {
+        browser.url("http://tutorials.actionqa.com/yt/nw/basic/text-input.html");
+        browser.click("#text-input");
+        browser.pause(2000);
+        browser.keys("We're using keys");
+        browser.pause(2000);
+        browser.keys([browser.Keys.COMMAND,
+            "a",
+            browser.Keys.NULL,
+            browser.Keys.DELETE])
+
+        browser.pause(2000);
+        browser.end();
     }
 }
 ```
 
 > - `browser.setValue("#text-input","Hello");`
 > - `browser.clearValue("#text-input");`
+> - `browser.keys("We're using keys");`
+> - `browser.keys(["W","E","A","R","E","1"]);`
+> - `browser.keys([browser.Keys.COMMAND, "a", browser.Keys.NULL, browser.Keys.DELETE])`
+
+### 9-dropdown.js
+
+```
+module.exports = {
+    "dropdown test by keyboard": function (browser) {
+        browser.url("http://tutorials.actionqa.com/yt/nw/basic/drop-down.html");
+        browser.pause(2000);
+        browser.setValue("#dropdown","Thor");
+        browser.pause(2000);
+        browser.setValue("#dropdown","H");
+        browser.pause(2000);
+        browser.setValue("#dropdown","Th");
+        browser.pause(2000);
+        browser.setValue("#dropdown","Black");
+        browser.pause(2000);
+        browser.setValue("#dropdown","Black");
+        browser.pause(2000);
+        browser.end();
+    },
+
+    "dropdown test by click": function (browser) {
+        browser.url("http://tutorials.actionqa.com/yt/nw/basic/drop-down.html");
+        browser.pause(2000);
+        browser.click("#dropdown option:nth-child(4)");
+        browser.pause(2000);
+        browser.click("#dropdown option:nth-child(3)");
+        browser.pause(2000);
+        browser.end();
+    },
+
+    "dropdown test by for loop": function (browser) {
+        browser.url("http://tutorials.actionqa.com/yt/nw/basic/drop-down.html");
+        browser.pause(2000);
+        
+        for(let i = 0; i<=4; i++){
+            browser.click(`#dropdown option:nth-child(${i})`);
+            browser.pause(2000);
+        }
+        browser.end();
+    }
+}
+```
+
+> - `browser.setValue("#dropdown","Black");`
+> - `browser.click("#dropdown option:nth-child(3)");`
