@@ -327,10 +327,11 @@ module.exports = {
 > - `browser.end();`
 
 
-### 8-textInput.js
+## 8-textInput.js
 
 
 ```
+
 module.exports = {
     "set and clear": function (browser){
         browser.url("http://tutorials.actionqa.com/yt/nw/basic/text-input.html");
@@ -342,6 +343,7 @@ module.exports = {
         browser.end();
     }
 }
+
 ```
 
 > - `browser.setValue("#text-input","Hello");`
