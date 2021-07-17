@@ -116,7 +116,8 @@ browser.pause(2000);
 }
 
 ![Image](https://imgur.com/a/9cbol1l)
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+
+![alt text](https://github.com/JigarSony/Nightwatch/blob/master/1.png?raw=true)
 - To switch/change locator type `css/xpath`
 > - Need to add these statements before using `browser.useXpath()` && `browser.useCSS()`
 
