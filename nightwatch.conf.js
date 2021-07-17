@@ -23,6 +23,7 @@ module.exports = {
 
   test_settings: {
     default: {
+      //use_xpath:true,
       disable_error_log: false,
       launch_url: 'https://nightwatchjs.org',
 

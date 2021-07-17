@@ -1,2 +1,8 @@
-1. simple.js
-2. selectors.js
+1. 1-simple.js
+2. 2-selectors.js
+3. 3-selectors.js
+4. 4-selectors.js
+5. 5-navigate.js
+6. 6-pause.js
+7. 7-click.js
+8. 8-textInput.js
