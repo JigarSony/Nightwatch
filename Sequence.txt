@@ -6,3 +6,7 @@
 6. 6-pause.js
 7. 7-click.js
 8. 8-textInput.js
+9. 9-dropdown.js
+10. 10-assert-visible.js
+11. 11-assert-contains-text.js
+12. 12-assert-present.js

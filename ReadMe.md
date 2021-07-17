@@ -438,3 +438,107 @@ module.exports = {
 
 > - `browser.setValue("#dropdown","Black");`
 > - `browser.click("#dropdown option:nth-child(3)");`
+
+## Assert
+
+[API Reference](https://nightwatchjs.org/api/)
+
+![alt text](https://github.com/JigarSony/Nightwatch/blob/master/referenceScreenShots/3.png?raw=true)
+
+### 10-assert-visible.js
+
+```
+module.exports = {
+    "Assert Visible": function (browser){
+        browser.url("http://tutorials.actionqa.com/yt/nw/asserts/assert-vs-verify.html");
+        browser.assert.visible("#assert-verify-header");
+        browser.click("#make-header-invisible");
+        //browser.assert.visible("#assert-verify-header");
+        browser.assert.not.visible("#assert-verify-header");
+        browser.end(); 
+    },
+
+    "Expect Visible": function (browser){
+        browser.url("http://tutorials.actionqa.com/yt/nw/asserts/assert-vs-verify.html");
+        browser.expect.element("#assert-verify-header").to.be.visible;
+        browser.click("#make-header-invisible");
+        browser.expect.element("#assert-verify-header").to.not.be.visible;
+        browser.end(); 
+    }
+}
+```
+
+### 11-assert-contains-text.js
+
+```
+module.exports = {
+    "Assert Contains-text": function (browser) {
+        browser.url("http://tutorials.actionqa.com/yt/nw/asserts/assert-vs-verify.html");
+        browser.assert.containsText("#more-text","Hello! I'm some more text!");
+        browser.assert.containsText("#more-text","some more text!");
+        //browser.assert.containsText("#more-text","Some More Text!"); //fail
+
+        browser.click("#change-text");
+
+        browser.assert.not.containsText("#more-text","Hello! I'm some more text!");
+        browser.assert.not.containsText("#more-text","some more text!");
+
+        browser.assert.containsText("#more-text","You changed me!");
+        browser.assert.containsText("#more-text","changed me!");
+        //browser.assert.containsText("#more-text","you Changed Me!"); //fail
+        browser.end();
+    },
+
+    "Expect Contains-text": function (browser) {
+        browser.url("http://tutorials.actionqa.com/yt/nw/asserts/assert-vs-verify.html");
+        browser.expect
+            .element("#more-text")
+            .text.to
+            .equal("Hello! I'm some more text!");
+        browser.expect.element("#more-text").text.to.contain("some more text!");
+        //browser.expect.element("#more-text").text.to.equal("some more text!");//fail
+
+        browser.click("#change-text");
+
+        browser.expect
+        .element("#more-text")
+        .text.to.not
+        .equal("Hello! I'm some more text!");
+    browser.expect.element("#more-text").text.to.not.contain("some more text!");
+
+        browser.expect
+            .element("#more-text")
+            .text.to
+            .equal("You changed me!");
+        browser.expect.element("#more-text").text.to.contain("changed me!");
+        browser.end();
+    }
+}
+```
+
+### 12-assert-present.js
+
+```
+module.exports = {
+    "Assert Present": ""+function(browser){
+        browser.url("http://tutorials.actionqa.com/yt/nw/asserts/assert-vs-verify.html");
+        browser.assert.elementPresent("#some-list");
+        browser.click("#remove-list");
+        //browser.assert.elementPresent("#some-list");//fail
+        browser.assert.not.elementPresent("#some-list");
+        browser.end();
+    },
+
+    "Expect Present": function(browser){
+        browser.url("http://tutorials.actionqa.com/yt/nw/asserts/assert-vs-verify.html");
+        browser.expect.element("#some-list").to.be.present;
+        browser.click("#remove-list");
+        browser.expect.element("#some-list").to.not.be.present;
+        browser.end();
+    }
+}
+```
+> - `browser.assert.elementPresent("#some-list");`
+> - `browser.assert.not.elementPresent("#some-list");`
+> - `browser.expect.element("#some-list").to.be.present;`
+> - `browser.expect.element("#some-list").to.not.be.present;`
