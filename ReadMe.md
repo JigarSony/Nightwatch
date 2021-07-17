@@ -20,11 +20,11 @@ Official Website [Nightwatch](https://nightwatchjs.org/)
  - open VS Code `code .`
  - To check Nightwatch version `npx nightwatch --version`
 
-  ```
+```
   Nightwatch:
     version: 1.7.7
     changelog: https://github.com/nightwatchjs/nightwatch/releases/tag/v1.7.7
-    ```
+```
 
  - To install Chrome driver `npm install chromedriver --save-dev`
  - To install Firefox/Gecko driver `npm install geckodriver --save-dev`
