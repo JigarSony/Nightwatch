@@ -10,3 +10,5 @@
 10. 10-assert-visible.js
 11. 11-assert-contains-text.js
 12. 12-assert-present.js
+13. 13-assert-enable.js
+14. 14-wait-for.js
