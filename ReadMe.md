@@ -1,5 +1,8 @@
 # Nightwatch
 
+## Udemy Course
+[Udemy](https://www.udemy.com/course/web-automation-testing-for-beginners-using-nightwatchjs/)
+
 Official Website [Nightwatch](https://nightwatchjs.org/)
 
 [NPM](https://www.npmjs.com/package/nightwatch)
@@ -599,3 +602,129 @@ module.exports = {
 > - `browser.waitForElementVisible("#element-2",8000);`
 > - `browser.assert.not.elementPresent("#element-1");`
 > - `browser.waitForElementNotPresent("#element-2",8000);`
+
+
+### Module-5 Running Test
+
+![alt text](https://github.com/JigarSony/Nightwatch/blob/master/referenceScreenShots/4.png?raw=true)
+
+> - To Execute in headless mode `npx nightwatch test\filename -e chrome --headless`
+> - `npx nightwatch tests/14-wait-for.js -e chrome --headless` 
+> - `last file` :smile:
+
+### 15-a.js
+
+```
+module.exports = {
+    "a test": function (browser) {
+        browser.assert.ok(true);
+        //node js assert
+    }
+}
+```
+
+> - To run all test on chrome browser `npx nightwatch -e chrome`
+> - To run specific file/test `npx nightwatch -e chrome test\filename` --in here test is folder and inside files
+> - OR `npx nightwatch --test test\15-a.js -e chrome --headless`
+> - OR ` npx nightwatch -e chrome --headless --test tests/foo/18-foo-a.js`
+> - To run all test in headless mode `npx nightwatch -e chrome --headless`
+> - To run specific file/test in headless mode `npx nightwatch test\filename -e chrome --headless`
+> - To run multiple files `npx nightwatch tests/15-a.js tests/foo/19-foo-b.js -e chrome --headless`
+
+### 16-b.js
+
+```
+module.exports = {
+    "b test": function (browser) {
+        browser.assert.ok(true);
+        //node js assert
+    }
+}
+```
+
+### 17-c.js
+
+```
+module.exports = {
+    "c test": function (browser) {
+        browser.assert.ok(true);
+        //node js assert
+    }
+}
+```
+
+> - Created `foo` dir
+
+### 18-foo-a.js
+
+```
+module.exports = {
+    "foo-a test": function (browser) {
+        browser.assert.ok(true);
+        //node js assert
+    }
+}
+```
+
+### 19-foo-b.js
+
+```
+module.exports = {
+    "foo-b test": function (browser) {
+        browser.assert.ok(true);
+        //node js assert
+    }
+}
+```
+
+### Giving `Tag` now to foo dir files
+
+> - `tags:["batman"],`
+
+```
+module.exports = {
+    tags:["batman"],
+    "foo-a test": function (browser) {
+        browser.assert.ok(true);
+        //node js assert
+    }
+}
+```
+
+```
+module.exports = {
+    tags:["batman"],
+    "foo-b test": function (browser) {
+        browser.assert.ok(true);
+        //node js assert
+    }
+}
+```
+
+> - To run suit with tag `npx nightwatch -e chrome --headless --tag batman`
+> - OR `npx nightwatch -e chrome --headless -a batman`
+`npx nightwatch -e chrome --headless --tag <tagname>`
+
+> - To skip case with that tag `npx nightwatch -e chrome --headless --skiptags batman`
+
+### Groups
+
+> - To run suit with group `npx nightwatch -e chrome --headless -g foo`
+> - To run suit with group `npx nightwatch -e chrome --headless --groups foo`
+
+> - `Foo dir`
+> - `Foo group`
+> - `npx nightwatch -e chrome --headless --groups <dir/group>`
+
+> - To skip group `npx nightwatch -e chrome --headless --skipgroup <dir/group>`
+
+> Now Create New dir bar under foo
+
+> - In this `npx nightwatch -e chrome --headless --groups foo`
+> - It'll run foo as well bar 
+
+> - But if we want only bar
+> - In this `npx nightwatch -e chrome --headless --groups foo/bar`
+
+Now If want to run foo but not bar
+> - In this `npx nightwatch -e chrome --headless --groups foo --skipgroup bar`
