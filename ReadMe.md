@@ -66,15 +66,16 @@ npx nightwatch
 
 ```
 module.exports = {
-"Hello World": function(browser){
-browser.url("http://tutorials.actionqa.com/yt/nw/simple.html");
-}
+    "Hello World": function(browser){
+        browser.url("http://tutorials.actionqa.com/yt/nw/simple.html");
+    }
 }
 ```
 
-- Run Command `npx nightwarch -e chrome` specific to `chrome browser`
-- Run Command `npx nightwarch -e firefox` specific to `firefox browser`
-`npx nightwatch -e chrome`
+> - Run Command `npx nightwarch -e chrome` specific to `chrome browser`
+> - Run Command `npx nightwarch -e firefox` specific to `firefox browser`
+
+> `npx nightwatch -e chrome`
 
 
  ### Execution-3
@@ -241,7 +242,7 @@ module.exports = {
 test_settings: {
 default: {
 use_xpath:true
-}
+    }
 }
 ```
 
@@ -280,7 +281,6 @@ module.exports = {
 
 ### 5-navigate.js
 
-
 ```
 module.exports = {
     "navigate": function (browser){
@@ -293,12 +293,9 @@ module.exports = {
 ```
 > - `NoIdea`
 
-
 ### 6-pause.js
 
-
 ```
-
 module.exports = {
     "navigate": function (browser){
         browser.url("https://www.google.com");
@@ -311,14 +308,12 @@ module.exports = {
         //use : debug the page at some execution time
     },
 };
-
 ```
+
 > - `browser.pause(2000);` pause for 2 sec
 > - `browser.pause();` pause...
 
-
 ### 7-click.js
-
 
 ```
 module.exports = {
@@ -332,7 +327,6 @@ module.exports = {
 ```
 > - `browser.click("#surprise-button");`
 > - `browser.end();`
-
 
 ## 8-textInput.js
 
@@ -468,6 +462,12 @@ module.exports = {
 }
 ```
 
+> - `browser.assert.visible("#assert-verify-header");`
+> - `browser.assert.not.visible("#assert-verify-header");`
+> - `browser.expect.element("#assert-verify-header").to.be.visible;`
+> - `browser.expect.element("#assert-verify-header").to.not.be.visible;`
+
+
 ### 11-assert-contains-text.js
 
 ```
@@ -515,6 +515,12 @@ module.exports = {
     }
 }
 ```
+
+> - `browser.assert.containsText("#more-text","Hello! I'm some more text!")`
+> - `browser.assert.not.containsText("#more-text","Hello! I'm some more text!");`
+> - `browser.expect.element("#more-text").text.to.contain("some more text!");`
+> - `browser.expect.element("#more-text").text.to.equal("Hello! I'm some more text!")`
+> - `browser.expect.element("#more-text").text.to.not.contain("some more text!");`
 
 ### 12-assert-present.js
 
