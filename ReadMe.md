@@ -728,3 +728,56 @@ module.exports = {
 
 Now If want to run foo but not bar
 > - In this `npx nightwatch -e chrome --headless --groups foo --skipgroup bar`
+
+
+## Accessibility 
+
+### Reference [Youtube](https://www.youtube.com/watch?v=nSodkqB-838)
+
+> - [NPM Pack](https://www.npmjs.com/package/nightwatch-axe-verbose)
+
+```
+"dependencies": {
+    "nightwatch-axe-verbose": "^1.1.1"
+}
+```
+
+`Code Updation`
+
+### globals.js - Added
+
+```
+const chromedriver = require('chromedriver');
+module.exports = {
+    before: function (done) {
+        chromedriver.start();
+        done();
+    },
+
+    after: function (done) {
+        chromedriver.stop();
+        done();
+    }
+}
+```
+### nightwatch.conf.js - update
+
+> - `custom_commands_path:  './node_modules/nightwatch-axe-verbose/src/commands',`
+> - `globals_path : './globals.js',`
+
+### 21-accessibility.spec.js - Added
+
+```
+module.exports = {
+    '@tags':['accesible'],
+    'Accessible site example': function (browser) {
+        browser.url('https://www.w3.org/WAI/demos/bad/after/home.html')
+        .assert.title('Welcome to CityLights! [Accessible Home Page]')
+        .axeInject()
+        .axeRun('body',{
+            rule: {},
+        })
+        .end();
+    }
+}
+```

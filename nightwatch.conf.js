@@ -11,13 +11,13 @@ module.exports = {
   page_objects_path: '',
 
   // See https://nightwatchjs.org/guide/extending-nightwatch/#writing-custom-commands
-  custom_commands_path:  '',
+  custom_commands_path:  './node_modules/nightwatch-axe-verbose/src/commands',
 
   // See https://nightwatchjs.org/guide/extending-nightwatch/#writing-custom-assertions
   custom_assertions_path: '',
 
   // See https://nightwatchjs.org/guide/#external-globals
-  globals_path : '',
+  globals_path : './globals.js',
 
   webdriver: {},
 

@@ -13,5 +13,8 @@
     "chromedriver": "^91.0.1",
     "geckodriver": "^2.0.1",
     "nightwatch": "^1.7.7"
+  },
+  "dependencies": {
+    "nightwatch-axe-verbose": "^1.1.1"
   }
 }
