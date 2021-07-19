@@ -12,3 +12,14 @@
 12. 12-assert-present.js
 13. 13-assert-enable.js
 14. 14-wait-for.js
+15. 15-a.js
+16. 16-b.js
+17. 17-c.js
+18. 18-foo-a.js
+19. 19-foo-b.js
+20. 20-bar-a.js
+21. 21-accessibility.spec.js
+22. 22-google.spec.js
+23. 23-cal.spec.js
+24. 24-cal-1.spec.js
+25. 25-cal-2.spec.js
