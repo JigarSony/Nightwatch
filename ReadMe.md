@@ -933,11 +933,9 @@ module.exports = {
 
 ## Other Reference GitHub
 
-```
 > - https://github.com/sridharbandi/Selenium-NightwatchJS-Template
 > - https://github.com/yazidisme/nightwatchjs-simply-page-object-example
 > - https://github.com/mucsi96/nightwatch-cucumber/tree/master/test
 > - https://github.com/email2vimalraj/nightwatch-test
 > - https://github.com/bidemiajala/nightwatch-pom
 > - https://github.com/nightwatchjs/nightwatch
-```
