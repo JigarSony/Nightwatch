@@ -783,3 +783,145 @@ module.exports = {
 ```
 
 > - `XML` file output generated in `test-output` folder with browser,version,plateform  :smile:
+
+## POM(Page Object Model) :dark_sunglasses:
+
+`Code Updation`
+### nightwatch.conf.js - update
+
+> - `page_objects_path: 'page-objects',`
+
+> Creat dir `page-objects`
+### googlePage.js
+
+```
+module.exports = {
+    url: "http://www.google.com",
+    elements: {
+        searchBar: {
+            selector: 'input[type=text]'
+        },
+        submit: {
+            selector: 'input[name=btnK]'
+        }
+    }
+}
+```
+### 22-google.spec.js
+
+```
+module.exports = {
+    'GoogleSearch Test': function(browser){
+        let googlePage = browser.page.googlePage();
+
+        googlePage.navigate()
+        .assert.title('Google')
+        .assert.visible('@searchBar')
+        .setValue('@searchBar','Nightwatch')
+        .pause(2000)
+        .click('@submit');
+    }
+}
+```
+### 23-calc.spec.js
+
+```
+module.exports = {
+    'Calculator Test': function (browser){
+        browser.url('https://juliemr.github.io/protractor-demo/')
+        .setValue('input.input-small','1')
+        .setValue('select.span1','-')
+        .setValue('body > div > div > form > input:nth-child(3)','1')
+        .click('#gobutton')
+        .expect.element('h2.ng-binding').text.to.equal('0');
+    }
+}
+```
+### calculatorPage.js
+
+```
+module.exports = {
+    url: 'https://juliemr.github.io/protractor-demo/',
+    elements:{
+        txtFirstNumber: 'input.input-small',
+        ddOperator: 'select.span1',
+        txtSecondNumber: 'body > div > div > form > input:nth-child(3)',
+        btnGo:'#gobutton',
+        textResult: 'h2.ng-binding'
+    }
+}
+```
+### 24-calc-1.spec.js
+
+```
+module.exports = {
+    beforeEach: function (browser){
+        let calPage = browser.page.calculatorPage();
+        calPage.navigate();
+    },
+
+    'Calculator Test': function (browser){
+        let calPage = browser.page.calculatorPage();
+        calPage
+            .setValue('@txtFirstNumber', '2')
+            .setValue('@ddOperator', '+')
+            .setValue('@txtSecondNumber', '2')
+            .click('@btnGo')
+            .expect.element('@textResult').to.text.equal('4');
+    }
+}
+```
+### calculatorPageWithCommand
+
+```
+const calculatorCommands = {
+    add: function(n1,n2) {
+        return this.fillAndSubmit(n1,n2,'+');
+    },
+    sub: function(n1,n2) {
+        return this.fillAndSubmit(n1,n2,'-');
+    },
+    mul: function(n1,n2) {
+        return this.fillAndSubmit(n1,n2,'*');
+    },
+    div: function(n1,n2) {
+        return this.fillAndSubmit(n1,n2,'/');
+    },
+    fillAndSubmit: function(n1,n2,op){
+        return this
+            .setValue('@txtFirstNumber',n1)
+            .setValue('@ddOperator',op)
+            .setValue('@txtSecondNumber',n2)
+            .click('@btnGo')
+    }
+}
+module.exports = {
+    url: 'https://juliemr.github.io/protractor-demo/',
+    commands: [calculatorCommands],
+    elements:{
+        txtFirstNumber: 'input.input-small',
+        ddOperator: 'select.span1',
+        txtSecondNumber: 'body > div > div > form > input:nth-child(3)',
+        btnGo:'#gobutton',
+        textResult: 'h2.ng-binding'
+    }
+}
+```
+
+### 25-calc-2.spec.js
+
+```
+module.exports = {
+    beforeEach: function (browser){
+        let calPage = browser.page.calculatorPageWithCommand();
+        calPage.navigate();
+    },
+
+    'Calculator Test': function (browser){
+        let calPage = browser.page.calculatorPageWithCommand();
+        calPage
+           .add(2,2)
+            .expect.element('@textResult').to.text.equal('4');
+    }
+}
+```
