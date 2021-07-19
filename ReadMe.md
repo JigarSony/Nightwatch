@@ -729,7 +729,10 @@ module.exports = {
 Now If want to run foo but not bar
 > - In this `npx nightwatch -e chrome --headless --groups foo --skipgroup bar`
 
-
+## Reference - Daved Mello
+[Youtube](https://www.youtube.com/playlist?list=PLLS_Ef55N6hmkt3-JlW40GAGpXSlp8t_D)
+[Github](https://github.com/reallymello/nightwatchTutorials)
+[Blog](https://www.davidmello.com/implementing-a-minimum-accessibility-test-plan/)
 ## Accessibility 
 
 ### Reference [Youtube](https://www.youtube.com/watch?v=nSodkqB-838)
@@ -785,6 +788,8 @@ module.exports = {
 > - `XML` file output generated in `test-output` folder with browser,version,plateform  :smile:
 
 ## POM(Page Object Model) :dark_sunglasses:
+
+[Blog](https://www.davidmello.com/nightwatch-page-object-model-with-commands/)
 
 `Code Updation`
 ### nightwatch.conf.js - update
@@ -924,4 +929,15 @@ module.exports = {
             .expect.element('@textResult').to.text.equal('4');
     }
 }
+```
+
+## Other Reference GitHub
+
+```
+> - https://github.com/sridharbandi/Selenium-NightwatchJS-Template
+> - https://github.com/yazidisme/nightwatchjs-simply-page-object-example
+> - https://github.com/mucsi96/nightwatch-cucumber/tree/master/test
+> - https://github.com/email2vimalraj/nightwatch-test
+> - https://github.com/bidemiajala/nightwatch-pom
+> - https://github.com/nightwatchjs/nightwatch
 ```
