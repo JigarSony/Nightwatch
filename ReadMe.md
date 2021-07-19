@@ -781,3 +781,5 @@ module.exports = {
     }
 }
 ```
+
+> - `XML` file output generated in `test-output` folder with browser,version,plateform  :smile:
