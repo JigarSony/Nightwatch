@@ -1000,7 +1000,3 @@ module.exports = {
         browser.end();
     }
 }
-
-//ReadMe
-//https://www.youtube.com/watch?v=5V56HYebiMk
-```
