@@ -939,3 +939,68 @@ module.exports = {
 > - https://github.com/email2vimalraj/nightwatch-test
 > - https://github.com/bidemiajala/nightwatch-pom
 > - https://github.com/nightwatchjs/nightwatch
+
+### 26 - element
+
+[Reference - ActionQA - Youtube](https://www.youtube.com/watch?v=qBOif3OfDn8)
+
+```
+module.exports = {
+    'use element': async function (browser) {
+        browser.url('http://tutorials.actionqa.com/nwind/element.html');
+        const elementResult = await browser.element("css selector", "#some-button");
+        console.log(JSON.stringify(elementResult,null,4));
+        //console.log('The Element: '+ elementResult.value.ELEMENT); -- Not working
+    }
+}
+```
+### 27 - elements
+
+[Reference - ActionQA - Youtube](https://www.youtube.com/watch?v=K77zBgpcZGM)
+
+```
+module.exports = {
+    'get Table rows' : async function (browser) {
+        browser.url('https://tutorials.actionqa.com/nwind/elements.html');
+        
+        const tableRow = await browser.elements("css selector", "tbody tr")
+           console.log("Number of Rows: " + tableRow.value.lenght);
+           browser.assert.equal(tableRow.value.length, '4');
+           console.log(JSON.stringify(tableRow,null,4));
+    },
+};
+```
+
+
+### 28-multiWindowsHandle
+
+[Reference - ActionQA - Youtube](https://www.youtube.com/watch?v=5V56HYebiMk&t=15s)
+
+```
+module.exports = {
+    'Multiwindows Handle': async function (browser) {
+        browser.url('http://the-internet.herokuapp.com/'),
+        browser.click("a[href='/windows']");
+        browser.pause(2000);
+        browser.click("a[href='/windows/new']");
+        browser.pause(2000);
+
+        const currentWindowsHandle = await browser.windowHandle();
+        const allWindowsHandles = await browser.windowHandles();
+
+        for(let i = 0; i < allWindowsHandles.value.length; i++){
+            if(allWindowsHandles.value[i] !== currentWindowsHandle.value){
+                browser.switchWindow(allWindowsHandles.value[i]);
+                break;
+            }
+        }
+
+        browser.assert.containsText("div[class='example'] h3","New Window")
+        browser.pause(2000);
+        browser.end();
+    }
+}
+
+//ReadMe
+//https://www.youtube.com/watch?v=5V56HYebiMk
+```
