@@ -3,6 +3,8 @@
 ## Udemy Course
 [Udemy](https://www.udemy.com/course/web-automation-testing-for-beginners-using-nightwatchjs/)
 
+[TAU](https://testautomationu.applitools.com/nightwatchjs-tutorial)
+
 Official Website [Nightwatch](https://nightwatchjs.org/)
 
 [NPM](https://www.npmjs.com/package/nightwatch)
@@ -1000,3 +1002,6 @@ module.exports = {
         browser.end();
     }
 }
+```
+
+[Blog](https://blog.logrocket.com/using-nightwatch-js-to-write-end-to-end-tests/)
