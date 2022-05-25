@@ -21,7 +21,7 @@ Official Website [Nightwatch](https://nightwatchjs.org/)
  - Create Newdir `Nightwatch`
  - Type `cd\Nightwatch`
  - To create `package.json`  Type `npm init -y`
- - To install Nightwatch dependencies `npm install nightwatch chromedriver --save-dep`
+ - To install Nightwatch dependencies `npm install nightwatch chromedriver --save-dev`
  - open VS Code `code .`
  - To check Nightwatch version `npx nightwatch --version`
 
